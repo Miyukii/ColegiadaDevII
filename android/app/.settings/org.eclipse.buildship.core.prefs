@@ -1,0 +1,13 @@
+arguments=
+auto.sync=false
+build.scans.enabled=false
+connection.gradle.distribution=GRADLE_DISTRIBUTION(LOCAL_INSTALLATION(F\:\\Development User\\Programas\\Android Studio\\gradle\\gradle-5.1.1\\bin))
+connection.project.dir=
+eclipse.preferences.version=1
+gradle.user.home=
+java.home=C\:/Program Files/Java/jdk1.8.0_162
+jvm.arguments=
+offline.mode=false
+override.workspace.settings=true
+show.console.view=true
+show.executions.view=true

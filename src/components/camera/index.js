@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Modal, View, Image, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { RNCamera } from "react-native-camera";
-import styles from "./styles";
+import React, { useState } from 'react';
+import { Modal, View, Image, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { RNCamera } from 'react-native-camera';
+import styles from './styles';
 
 function Camera({ isVisible, onChangePhoto, onCloseCamera }) {
   const [camera, setCamera] = useState();
@@ -17,7 +17,7 @@ function Camera({ isVisible, onChangePhoto, onCloseCamera }) {
       });
       onChangePhoto(uri);
     } catch (error) {
-      Alert.alert("Erro", "Houve um erro ao tirar a foto.");
+      Alert.alert('Erro', 'Houve um erro ao tirar a foto.');
     }
   }
 
@@ -30,24 +30,23 @@ function Camera({ isVisible, onChangePhoto, onCloseCamera }) {
         autoFocus={RNCamera.Constants.AutoFocus.on}
         flashMode={RNCamera.Constants.FlashMode.off}
         androidCameraPermissionOptions={{
-          title: "Permissão para usar a câmera",
-          message: "Precisamos da sua permissão para usar a câmera.",
-          buttonPositive: "Ok",
-          buttonNegative: "Cancelar",
+          title: 'Permissão para usar a câmera',
+          message: 'Precisamos da sua permissão para usar a câmera.',
+          buttonPositive: 'Ok',
+          buttonNegative: 'Cancelar',
         }}
-        captureAudio={false}
-      >
+        captureAudio={false}>
         <Icon
           name="photo-camera"
           size={40}
-          color={"#fff"}
+          color={'#fff'}
           onPress={() => onTakePicture()}
           style={styles.buttonTakePicture}
         />
         <Icon
           name="close"
           size={50}
-          color={"#fff"}
+          color={'#fff'}
           onPress={onCloseCamera}
           style={styles.buttonCloseCamera}
         />

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Camera from '../../components/camera';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { View, ImageBackground, Text } from 'react-native';
+import { View, ImageBackground, Text, Linking } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
+
+import Mailer from 'react-native-mail';
 
 function Func1() {
   const [isCameraVisible, setIsCameraVisible] = useState(false);
@@ -20,6 +22,28 @@ function Func1() {
 
   function limparFoto() {
     setPhoto(null);
+  }
+
+  function enviarEmail() {
+    const options = {
+      subject: 'teste',
+      recipients: ['wenderls@unipam.edu.br'],
+      body: 'teste',
+      attachments: [
+        {
+          path: photo,
+        },
+      ],
+    };
+
+    console.log(options);
+    function callback(error) {
+      if (error) {
+        alert('Não foi possivel enviar o email');
+      }
+    }
+
+    Mailer.mail(options, callback);
   }
 
   return (
@@ -54,11 +78,7 @@ function Func1() {
             }}>
             <Icon name="undo" size={40} />
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              limparFoto();
-            }}>
+          <TouchableOpacity style={styles.button} onPress={() => enviarEmail()}>
             <Icon name="send" size={40} />
           </TouchableOpacity>
           <Camera

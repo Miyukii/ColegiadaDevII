@@ -6,6 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
 
 import Mailer from 'react-native-mail';
+import * as MailComposer from 'expo-mail-composer';
 
 function Func1() {
   const [isCameraVisible, setIsCameraVisible] = useState(false);
@@ -44,6 +45,16 @@ function Func1() {
     }
 
     Mailer.mail(options, callback);
+  }
+
+  async function expoMail(){
+    const options = {
+      subject: 'teste',
+      recipients: ['wenderls@unipam.edu.br'],
+      body: 'teste',
+      attachments: [photo],
+    };
+    await MailComposer.composeAsync(options);
   }
 
   return (

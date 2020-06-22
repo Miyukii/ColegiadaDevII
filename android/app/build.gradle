@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 
 import com.android.build.OutputFile
 
@@ -193,6 +194,7 @@ android {
 dependencies {
     compile project(':RNMail')
     compile 'com.android.support:multidex:1.0.1'
+    addUnimodulesDependencies()
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion

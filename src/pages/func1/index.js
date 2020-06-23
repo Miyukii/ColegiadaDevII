@@ -47,14 +47,14 @@ function Func1() {
     Mailer.mail(options, callback);
   }
 
-  async function expoMail(){
+  async function expoMail() {
     const options = {
       subject: 'teste',
       recipients: ['wenderls@unipam.edu.br'],
       body: 'teste',
       attachments: [photo],
     };
-    await MailComposer.composeAsync(options);
+    MailComposer.composeAsync(options);
   }
 
   return (
@@ -89,7 +89,7 @@ function Func1() {
             }}>
             <Icon name="undo" size={40} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => enviarEmail()}>
+          <TouchableOpacity style={styles.button} onPress={() => expoMail()}>
             <Icon name="send" size={40} />
           </TouchableOpacity>
           <Camera

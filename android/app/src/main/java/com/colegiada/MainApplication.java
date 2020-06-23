@@ -14,7 +14,7 @@ import java.util.List;
 import com.reactlibrary.mailcompose.RNMailComposePackage;
 
 // adicionado para o unimodules
-import com.doingmything.generated.BasePackageList;
+import com.colegiada.generated.BasePackageList;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.SingletonModule;
@@ -22,7 +22,8 @@ import java.util.Arrays;
 
 public class MainApplication extends Application implements ReactApplication {
 
-private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
+  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
+      new BasePackageList().getPackageList(), null);
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -40,9 +41,7 @@ private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactMod
       // packages.add(new MyReactNativePackage());
 
       // Add unimodules
-      List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
-        new ModuleRegistryAdapter(mModuleRegistryProvider)
-      );
+      List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(new ModuleRegistryAdapter(mModuleRegistryProvider));
       packages.addAll(unimodules);
 
       return packages;

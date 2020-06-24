@@ -79,6 +79,8 @@ target 'Colegiada' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'ColegiadaTests' do
     inherit! :complete
     # Pods for testing
